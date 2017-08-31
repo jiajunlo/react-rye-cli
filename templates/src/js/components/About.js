@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default class NotFound extends React.Component {
+export default class About extends React.Component {
     constructor() {
         super();
     }
 
     render() {
         return (
-            <div id="container">404</div>
+            <div id="container">About</div>
         );
     }
 };

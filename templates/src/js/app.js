@@ -1,23 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, Redirect, IndexRoute, browserHistory } from 'react-router';
+import { Router } from 'react-router-dom';
 
-import configureStore from './store/configureStore';
-import Main from './components/Main';
-import Home from './components/Home';
-
-import NotFound from './components/NotFound';
-
-const store = configureStore();
+import { store, history } from './store/configureStore';
+import App from './container/App';
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory}>
-            <Route path="/" component={Main}>
-                <IndexRoute component={Home} />
-                <Route path="*" component={NotFound} />
-            </Route>
+        <Router history={history}>
+            <App />
         </Router>
     </Provider>, document.getElementById('app')
 );
